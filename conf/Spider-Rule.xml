@@ -5,12 +5,20 @@
 		<charset>UTF-8</charset>
 		<url>http://www.23us.so/</url>
 		<chapter-list-selector>#at td a</chapter-list-selector>
+		<chapter-detail-title-selector>#amain h1</chapter-detail-title-selector>
+		<chapter-detail-content-selector>#contents</chapter-detail-content-selector>
+		<chapter-detail-prev-selector>#footlink a </chapter-detail-prev-selector>
+		<chapter-detail-next-selector>#footlink a,2</chapter-detail-next-selector>
 	</site>
 	<site>
 		<title>笔趣阁</title>
 		<charset>UTF-8</charset>
 		<url>http://www.biquge.tw</url>
 		<chapter-list-selector>#list dd a</chapter-list-selector>
+		<chapter-detail-title-selector>#bookname h1,0</chapter-detail-title-selector>
+		<chapter-detail-content-selector>#content</chapter-detail-content-selector>
+		<chapter-detail-prev-selector>#pager_prev,0</chapter-detail-prev-selector>
+		<chapter-detail-next-selector>#pager_next,0</chapter-detail-next-selector>
 	</site>
 	<site>
 		<title>顶点小说网</title>

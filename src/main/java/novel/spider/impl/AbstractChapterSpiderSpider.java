@@ -17,19 +17,8 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbsstractChapterSpiderSpider implements IChapterSpider {
+public class AbstractChapterSpiderSpider extends AbstractSpider implements IChapterSpider {
 
-
-    protected String crawl(String url) throws Exception {
-        try (CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-             CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))
-        ) {
-            String result = EntityUtils.toString(httpResponse.getEntity());
-            return result;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
 
 
     public List<Chapter> getsChapter(String url) {
@@ -42,7 +31,6 @@ public class AbsstractChapterSpiderSpider implements IChapterSpider {
             List<Chapter> chapters = new ArrayList<>();
             for (Element a : element) {
                 Chapter character = new Chapter();
-
                 character.setTitle(a.text());
                 character.setUrl(a.attr("href"));
                 chapters.add(character);
