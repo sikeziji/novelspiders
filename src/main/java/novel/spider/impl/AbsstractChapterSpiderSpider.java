@@ -1,7 +1,9 @@
 package novel.spider.impl;
 
+import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.entitys.Chapter;
 import novel.spider.interfaces.IChapterSpider;
+import novel.spider.util.NovelSpiderUtil;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -16,26 +18,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class AbsstractChapterSpiderSpider implements IChapterSpider {
-    protected String crawl(String url) throws Exception {
-        try(CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-            CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))
-        ) {
-            HttpGet httpGet = new HttpGet(url);
 
+
+    protected String crawl(String url) throws Exception {
+        try (CloseableHttpClient httpClient = HttpClientBuilder.create().build();
+             CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))
+        ) {
             String result = EntityUtils.toString(httpResponse.getEntity());
             return result;
-        }catch (Exception e){
-                throw new RuntimeException(e);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
+
     public List<Chapter> getsChapter(String url) {
+
         try {
             String resutlt = crawl(url);
             Document document = Jsoup.parse(resutlt);
-            Elements element = document.select("#list dd a");
+            document.setBaseUri(url);
+            Elements element = document.select(NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url)).get("chapter-list-selector"));
             List<Chapter> chapters = new ArrayList<>();
-            for (Element a: element) {
+            for (Element a : element) {
                 Chapter character = new Chapter();
 
                 character.setTitle(a.text());
@@ -43,9 +48,10 @@ public class AbsstractChapterSpiderSpider implements IChapterSpider {
                 chapters.add(character);
                 System.out.print(a);
             }
-        return chapters;
+            return chapters;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
+
 }
