@@ -14,7 +14,6 @@ public class Testcase {
         List<Chapter> chapters  = spider.getsChapter("http://www.biquge.tw/0_5");
         for (Chapter chapter : chapters){
             System.out.println(chapter);
-            System.out.println("你说的不算");
         }
 
     }
