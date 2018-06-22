@@ -17,9 +17,9 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AbstractChapterSpiderSpider extends AbstractSpider implements IChapterSpider {
+public class AbstractChapterSpider extends AbstractSpider implements IChapterSpider {
 
-
+    private static final String TAG = "AbstractChapterSpiderSp";
 
     public List<Chapter> getsChapter(String url) {
 
@@ -27,14 +27,14 @@ public class AbstractChapterSpiderSpider extends AbstractSpider implements IChap
             String resutlt = crawl(url);
             Document document = Jsoup.parse(resutlt);
             document.setBaseUri(url);
-            Elements element = document.select(NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url)).get("chapter-list-selector"));
+            System.out.println(url);
+            Elements elements = document.select(NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url)).get("chapter-list-selector"));
             List<Chapter> chapters = new ArrayList<>();
-            for (Element a : element) {
+            for (Element a : elements) {
                 Chapter character = new Chapter();
                 character.setTitle(a.text());
-                character.setUrl(a.attr("href"));
+                character.setUrl(a.absUrl("href"));
                 chapters.add(character);
-                System.out.print(a);
             }
             return chapters;
         } catch (Exception e) {

@@ -1,6 +1,6 @@
 package novel.spider.impl;
 
-public class DefaultChapterSpider extends AbstractChapterSpiderSpider {
+public class DefaultChapterSpider extends AbstractChapterSpider {
 
 
 }

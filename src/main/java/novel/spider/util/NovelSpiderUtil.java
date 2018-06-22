@@ -25,9 +25,7 @@ public class NovelSpiderUtil {
 
 
     private NovelSpiderUtil() {
-    }
-
-    ;
+    };
 
     @SuppressWarnings("unchecked")
     private static void init() {

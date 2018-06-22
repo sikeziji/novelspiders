@@ -23,11 +23,10 @@ public abstract class AbstractSpider {
      * @return
      * @throws Exception
      */
-    protected  String crawl(String url) throws Exception {
+    protected String crawl(String url) throws Exception {
         try (CloseableHttpClient httpClient = HttpClientBuilder.create().build();
-             CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))
-        ) {
-            String result = EntityUtils.toString(httpResponse.getEntity(),NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url)).get("charset"));
+             CloseableHttpResponse httpResponse = httpClient.execute(new HttpGet(url))) {
+            String result = EntityUtils.toString(httpResponse.getEntity(), NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url)).get("charset"));
             return result;
         } catch (Exception e) {
             throw new RuntimeException(e);

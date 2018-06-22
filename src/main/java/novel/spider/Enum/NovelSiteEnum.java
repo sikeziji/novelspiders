@@ -8,7 +8,8 @@ package novel.spider.Enum;
 public enum NovelSiteEnum {
     DingDianXiaoShuo(1, "23us.so"),
     BiQuGe(2, "biquge.tw"),
-    DingDianXiaoShuoWang(3, "booktxt.net");
+    DingDianXiaoShuoWang(3, "booktxt.net"),
+    BiXiaWenXue(4, "bxwx9.org");
     private int id;
     private String url;
 
@@ -40,7 +41,9 @@ public enum NovelSiteEnum {
             case 2:
                 return BiQuGe;
             case 3:
-                return BiQuGe;
+                return DingDianXiaoShuoWang;
+            case 4:
+                return BiXiaWenXue;
             default:
                 throw new RuntimeException("id=" + id + "是不被支持的小说网站");
         }
@@ -48,8 +51,8 @@ public enum NovelSiteEnum {
 
     public static NovelSiteEnum getEnumByUrl(String url) {
         for (NovelSiteEnum novelSiteEnum : values()) {
-            if (url.contains(novelSiteEnum.url)) {
-                return novelSiteEnum;
+                    if (url.contains(novelSiteEnum.url)) {
+                        return novelSiteEnum;
             }
         }
         throw new RuntimeException("url=" + url + "是不被支持的小说网站");
