@@ -1,9 +1,6 @@
 package novel.spider.entitys;
 
 
-
-
-
 import org.apache.commons.lang.StringUtils;
 
 
@@ -17,10 +14,10 @@ import java.util.Objects;
  * 章节详细内容实体
  */
 public class ChapterDetail implements Serializable {
-    private String title;
-    private String content;
-    private String prev;
-    private String next;
+    private String title;//标题
+    private String content;//文章内容
+    private String prev;//上一章地址
+    private String next;//下一章地址
 
 
     @Override
@@ -64,7 +61,7 @@ public class ChapterDetail implements Serializable {
     public String toString() {
         return "ChapterDetail{" +
                 "title='" + title + '\'' +
-                ", content='" + StringUtils.abbreviate(content,30)  + '\'' +
+                ", content='" + StringUtils.abbreviate(content, 30) + '\'' +
                 ", prev='" + prev + '\'' +
                 ", next='" + next + '\'' +
                 '}';

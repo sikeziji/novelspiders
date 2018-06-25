@@ -38,4 +38,10 @@
 		<chapter-detail-next-selector>#footlink a,4</chapter-detail-next-selector>
 	</site>
 
+	<site>
+		<title>血红小说网</title>
+		<charset>GBK</charset>
+		<url>http://www.xuehong.cc/</url>
+	</site>
+
 </sites>
