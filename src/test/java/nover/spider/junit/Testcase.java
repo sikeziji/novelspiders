@@ -1,18 +1,28 @@
 package nover.spider.junit;
 
 import novel.spider.Enum.NovelSiteEnum;
+import novel.spider.configuration.configuration;
 import novel.spider.entitys.Chapter;
 import novel.spider.impl.BxwxChapterSpider;
 import novel.spider.impl.DefaultChapterDetailSpider;
 import novel.spider.impl.DefaultChapterSpider;
+import novel.spider.impl.NovelDownload;
 import novel.spider.interfaces.IChapterDetailSpider;
 import novel.spider.interfaces.IChapterSpider;
+import novel.spider.interfaces.INovelDownload;
 import novel.spider.util.NovelSpiderUtil;
+import org.apache.http.client.config.RequestConfig;
 import org.junit.Test;
 
+import javax.security.auth.login.Configuration;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Testcase {
+
+
     /**
      * 测试拿到顶点小说的章节列表
      */
@@ -24,6 +34,7 @@ public class Testcase {
             System.out.println(chapter);
         }
     }
+
     /**
      * 测试拿到顶点文学网的爬取方式
      */
@@ -62,5 +73,35 @@ public class Testcase {
         IChapterDetailSpider spider = new DefaultChapterDetailSpider();
         System.out.println(spider.getChapterDetail("https://www.bxwx9.org/b/5/5740/41249369.html").getContent());
     }
+
+    @Test
+    public void testDownload() {
+        INovelDownload download = new NovelDownload();
+        configuration config = new configuration();
+        config.setPath("D:/小说");
+        config.setSize(100);
+        config.setTryTimes(10);
+//        download.download("http://www.23us.so/files/article/html/1/1969/", config);
+        System.out.println("下载好了，文件保存在：" + download.download("http://www.23us.so/files/article/html/1/1969/", config) + "这里，赶紧去看看吧！");
+    }
+
+
+    @Test
+    public void testSubList() {
+        List<Integer> ints = new ArrayList<>();
+        for (int i = 0; i < 10 ;i++) {
+            ints.add(i);
+        }
+        System.out.println(ints);
+        //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        //0-4
+        System.out.println(ints.subList(0, 5));
+    }
+
+    @Test
+    public void testMultiFileMerge() {
+        NovelSpiderUtil.multiFileMerge("D:/小说", null, true);
+    }
+
 
 }
