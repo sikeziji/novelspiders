@@ -64,7 +64,7 @@ public class NovelSpiderUtil {
      */
     public static  void multiFileMerge(String path , String mergeToFile,boolean deleteThisFile)
     {
-    mergeToFile = mergeToFile == null ? path +"/merge.txt":mergeToFile;
+    mergeToFile = mergeToFile == null ? path +"/merge"+ null +".txt":mergeToFile;
     //文件路径
     File[] files = new File(path).listFiles(new FilenameFilter(){
 

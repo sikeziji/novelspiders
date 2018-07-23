@@ -40,8 +40,10 @@ public class NovelDownload implements INovelDownload {
         //所有线程都下载好了，合并
         int size = configuration.getSize();//线程的Size
 
-        int maxThreadSize = (int) Math.ceil(chapters.size() * 1.0 / size);//用章节列表的总章数 除 线程的Size 并且用ceil函数向上取整数 : 1222章/100 = 13
+        //用章节列表的总章数 除 线程的Size 并且用ceil函数向上取整数 : 1222章/100 = 13
+        int maxThreadSize = (int) Math.ceil(chapters.size() * 1.0 / size);
         Map<String, List<Chapter>> downloadTaskAlloc = new HashMap<>();
+
 
         for (int i = 0; i < maxThreadSize; i++) {
             int formIndex = i * (configuration.getSize());//i = 1 ；formIndex = 200；
@@ -55,7 +57,7 @@ public class NovelDownload implements INovelDownload {
         List<Future<String>> tasks = new ArrayList<>();
 
         //通过这两段代码就可以创建缺失的路径
-        String savePath = configuration.getPath() + "/" + NovelSiteEnum.getEnumByUrl(url).getUrl();
+        String savePath = configuration.getPath() + "/" + NovelSiteEnum.getEnumByUrl(url).getUrl()+"/";
         new File(savePath).mkdirs();
 
         for (String key : keySet) {
@@ -73,7 +75,8 @@ public class NovelDownload implements INovelDownload {
             }
         }
         NovelSpiderUtil.multiFileMerge(savePath, null, true);
-        return savePath + "/merge.txt";
+        System.out.println(chapters.get(1).getTitle());
+        return savePath + "/merge"+chapters.get(1).getTitle()+".txt";
     }
 }
 

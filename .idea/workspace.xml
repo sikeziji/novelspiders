@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4e45637-a09a-4e9a-9feb-809fb632f716" name="Default" comment="添加了笔下文学网站的支持，并对爬取的章节列表进行排序">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_jsoup_jsoup_1_11_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="c4e45637-a09a-4e9a-9feb-809fb632f716" name="Default" comment="下载小说到本地目录中，分章节下载，下载完成后合并成单独文件，默认目录为“D:/小说/...”；">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/Spider-Rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/Spider-Rule.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/entitys/ChapterDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/entitys/ChapterDetail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/impl/NovelDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/impl/NovelDownload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterDetailSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterDetailSpider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,34 +20,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="novel.spider" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AbstractChapterDetailSpider.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterDetailSpider.java">
+      <file leaf-file-name="Testcase.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1176">
-              <caret line="48" column="40" lean-forward="true" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
+            <state relative-caret-position="415">
+              <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3123#3124#0" expanded="true" />
+                <element signature="e#3190#3191#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Spider-Rule.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/conf/Spider-Rule.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ChapterDetail.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/entitys/ChapterDetail.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1056">
-              <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -72,8 +60,10 @@
       <find>第三</find>
       <find>第三百</find>
       <find>第三百九十</find>
-      <find>章</find>
       <find>content</find>
+      <find>downloadTaskAlloc</find>
+      <find>章</find>
+      <find>3102</find>
     </findStrings>
     <replaceStrings>
       <replace>contentSelector</replace>
@@ -81,11 +71,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterSpider.java" />
         <option value="$PROJECT_DIR$/config/Spider-Rule.fxml" />
         <option value="$PROJECT_DIR$/config/Spider-Rule" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/util/sdf.java" />
@@ -93,22 +85,30 @@
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/entitys/Chapter.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbsstractChapterSpiderSpider.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterDetailSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/DefaultChapterSpiderSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/DefaultChapterDetailSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstactChapterDetailSpider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java" />
-        <option value="$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterSpiderSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/BxwxChapterSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/Enum/NovelSiteEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterSpider.java" />
-        <option value="$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java" />
         <option value="D:/迅雷下载/5740.txt" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterDetailSpider.java" />
         <option value="$PROJECT_DIR$/src/main/java/novel/spider/entitys/ChapterDetail.java" />
         <option value="D:/迅雷下载/元尊.txt" />
+        <option value="$USER_HOME$/Downloads/圣墟.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/INovelDownload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/util/ChapterDetailSpiderFactor.java" />
         <option value="$PROJECT_DIR$/conf/Spider-Rule.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/util/ChapterSpiderFactory.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterSpider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/configuration/configuration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/NovelDownload.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterDetailSpider.java" />
+        <option value="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java" />
+        <option value="$USER_HOME$/Downloads/史上最强师兄.txt" />
+        <option value="$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java" />
       </list>
     </option>
   </component>
@@ -133,9 +133,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="419" />
-    <option name="width" value="1148" />
-    <option name="height" value="1018" />
+    <option name="x" value="383" />
+    <option name="y" value="9" />
+    <option name="width" value="960" />
+    <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -145,9 +146,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -158,12 +157,35 @@
             <path>
               <item name="novel.spider" type="b2602c69:ProjectViewProjectNode" />
               <item name="novelspiders" type="462c0819:PsiDirectoryNode" />
-              <item name="conf" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="novel.spider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="novelspiders" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="novel.spider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="novelspiders" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="novel.spider" type="b2602c69:ProjectViewProjectNode" />
+              <item name="novelspiders" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="junit" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -175,12 +197,15 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="XML" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="novel.spider.util" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Intellj workspaces\novelspiders\conf" />
     </key>
@@ -197,17 +222,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Testcase.testGetSiteContext">
+  <component name="RunManager" selected="JUnit.Testcase.test">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
-    <configuration name="Testcase.testGetChapterDetail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testcase.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="novel.spider" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="nover.spider.junit" />
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetChapterDetail" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -218,13 +243,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Testcase.testGetChapterDetail2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testcase.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="novel.spider" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="nover.spider.junit" />
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetChapterDetail2" />
+      <option name="METHOD_NAME" value="test1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -235,30 +260,13 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="Testcase.testGetSiteContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Testcase.testDownload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="novel.spider" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="nover.spider.junit" />
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetSiteContext" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="Testcase.testGetsChapter" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="novel.spider" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="nover.spider.junit" />
-      <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetsChapter" />
+      <option name="METHOD_NAME" value="testDownload" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -276,6 +284,23 @@
       <option name="PACKAGE_NAME" value="nover.spider.junit" />
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
       <option name="METHOD_NAME" value="testGetsChapter3" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="Testcase.testGetsChapterForTitle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel.spider" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="nover.spider.junit" />
+      <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
+      <option name="METHOD_NAME" value="testGetsChapterForTitle" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -307,19 +332,19 @@
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.Testcase.testGetSiteContext" />
-      <item itemvalue="JUnit.Testcase.testGetsChapter" />
-      <item itemvalue="JUnit.Testcase.testGetChapterDetail" />
       <item itemvalue="JUnit.Testcase.testGetsChapter3" />
-      <item itemvalue="JUnit.Testcase.testGetChapterDetail2" />
+      <item itemvalue="JUnit.Testcase.testGetsChapterForTitle" />
+      <item itemvalue="JUnit.Testcase.testDownload" />
+      <item itemvalue="JUnit.Testcase.test" />
+      <item itemvalue="JUnit.Testcase.test1" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Testcase.testGetSiteContext" />
-        <item itemvalue="JUnit.Testcase.testGetChapterDetail2" />
+        <item itemvalue="JUnit.Testcase.test" />
+        <item itemvalue="JUnit.Testcase.test1" />
+        <item itemvalue="JUnit.Testcase.testDownload" />
         <item itemvalue="JUnit.Testcase.testGetsChapter3" />
-        <item itemvalue="JUnit.Testcase.testGetsChapter" />
-        <item itemvalue="JUnit.Testcase.testGetChapterDetail" />
+        <item itemvalue="JUnit.Testcase.testGetsChapterForTitle" />
       </list>
     </recent_temporary>
   </component>
@@ -333,7 +358,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1529544677844</updated>
-      <workItem from="1529899995504" duration="64000" />
+      <workItem from="1529899995504" duration="166000" />
+      <workItem from="1529901506041" duration="9898000" />
+      <workItem from="1530086371059" duration="5888000" />
+      <workItem from="1530147127698" duration="2194000" />
+      <workItem from="1530252704243" duration="2853000" />
+      <workItem from="1530255606396" duration="10130000" />
+      <workItem from="1530266013283" duration="1014000" />
+      <workItem from="1530509863146" duration="4935000" />
+      <workItem from="1530525537162" duration="39000" />
+      <workItem from="1530578007140" duration="136000" />
+      <workItem from="1530857848379" duration="522000" />
+      <workItem from="1531386002985" duration="165000" />
+      <workItem from="1531386283988" duration="228000" />
+      <workItem from="1532321975377" duration="178000" />
+      <workItem from="1532322405463" duration="478000" />
     </task>
     <task id="LOCAL-00001" summary="更改Test项目">
       <created>1529544741114</created>
@@ -363,108 +402,132 @@
       <option name="project" value="LOCAL" />
       <updated>1529633512876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="添加血红小说网爬取规则">
+      <created>1529900097410</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1529900097411</updated>
+    </task>
+    <task id="LOCAL-00006" summary="下载小说到本地目录中，分章节下载，下载完成后合并成单独文件，默认目录为“D:/小说/...”；">
+      <created>1530263399302</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1530263399302</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 33m 54s.xml">
+    <history-entry file="Testcase_testDownload - 2018.07.02 at 14h 43m 24s.xml">
+      <configuration name="Testcase.testDownload" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testcase_testGetsChapter3 - 2018.07.02 at 14h 55m 51s.xml">
       <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 39m 47s.xml">
-      <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
+    <history-entry file="Testcase_testDownload - 2018.07.06 at 14h 21m 29s.xml">
+      <configuration name="Testcase.testDownload" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 41m 29s.xml">
-      <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
+    <history-entry file="Testcase_test - 2018.07.12 at 17h 01m 40s.xml">
+      <configuration name="Testcase.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 44m 17s.xml">
-      <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
+    <history-entry file="Testcase_test - 2018.07.12 at 17h 01m 58s.xml">
+      <configuration name="Testcase.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 44m 57s.xml">
-      <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
+    <history-entry file="Testcase_test1 - 2018.07.12 at 17h 07m 03s.xml">
+      <configuration name="Testcase.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 47m 30s.xml">
-      <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
+    <history-entry file="Testcase_test1 - 2018.07.12 at 17h 07m 28s.xml">
+      <configuration name="Testcase.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetsChapter3 - 2018.06.22 at 09h 53m 01s.xml">
-      <configuration name="Testcase.testGetsChapter3" configurationId="JUnit" />
+    <history-entry file="Testcase_test1 - 2018.07.12 at 17h 08m 06s.xml">
+      <configuration name="Testcase.test1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetChapterDetail2 - 2018.06.22 at 09h 56m 36s.xml">
-      <configuration name="Testcase.testGetChapterDetail2" configurationId="JUnit" />
+    <history-entry file="Testcase_test - 2018.07.23 at 13h 00m 33s.xml">
+      <configuration name="Testcase.test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Testcase_testGetChapterDetail2 - 2018.06.22 at 09h 56m 52s.xml">
-      <configuration name="Testcase.testGetChapterDetail2" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="Testcase_testGetSiteContext - 2018.06.22 at 09h 57m 22s.xml">
-      <configuration name="Testcase.testGetSiteContext" configurationId="JUnit" />
+    <history-entry file="Testcase_test - 2018.07.23 at 13h 01m 14s.xml">
+      <configuration name="Testcase.test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64000" />
+    <option name="totallyTimeSpent" value="38824000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005208" side_tool="true" weight="0.32946146" />
-      <window_info anchor="right" id="Maven Projects" order="3" weight="0.3296875" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900432" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.4556277" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info id="Capture Tool" order="2" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32900432" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="8" sideWeight="0.5005208" side_tool="true" visible="true" weight="0.32900432" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3296875" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32900432" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.45454547" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
+      <window_info id="Capture Tool" order="5" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2683706" />
-      <window_info anchor="right" id="Database" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20234291" />
+      <window_info anchor="right" id="Database" order="8" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24973376" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24973376" />
-      <window_info id="UI Designer" order="2" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="UI Designer" order="3" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info id="Favorites" order="4" side_tool="true" weight="0.32960597" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24862385" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32900432" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Inspection Results" order="8" weight="0.32900432" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="4" side_tool="true" weight="0.32960597" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32819384" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.32960597" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="7" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24813631" />
+      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32900432" />
     </layout>
     <layout-to-restore>
+      <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24944568" />
-      <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49947917" visible="true" weight="0.47294372" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="10" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12832801" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.24973376" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32900432" />
-      <window_info anchor="bottom" id="Inspection Results" order="11" weight="0.32900432" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900432" />
-      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="8" side_tool="true" weight="0.32960597" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005208" side_tool="true" weight="0.32946146" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info id="Image Layers" order="6" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49947917" weight="0.45454547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.24973376" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" weight="0.32960597" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32900432" />
       <window_info id="Capture Tool" order="5" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.32900432" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5005208" side_tool="true" weight="0.32946146" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.32900432" />
+      <window_info anchor="right" x="0" y="0" width="434" height="856" id="Documentation" order="7" side_tool="true" weight="0.32960597" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24813631" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32900432" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.3296875" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.41214058" />
+      <window_info anchor="right" id="Database" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Image Layers" order="2" />
-      <window_info anchor="right" id="Maven Projects" order="7" weight="0.3296875" />
-      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32900432" />
+      <window_info anchor="right" id="Palette&#9;" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info id="Structure" order="1" side_tool="true" visible="true" weight="0.24973376" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32819384" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39935064" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,11 +551,13 @@
     <MESSAGE value="封装部分小说网站，以及更改小说网站爬去代码" />
     <MESSAGE value="实现小说网站内容和标题以及下一页和上一页的爬取" />
     <MESSAGE value="添加了笔下文学网站的支持，并对爬取的章节列表进行排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了笔下文学网站的支持，并对爬取的章节列表进行排序" />
+    <MESSAGE value="添加血红小说网爬取规则" />
+    <MESSAGE value="下载小说到本地目录中，分章节下载，下载完成后合并成单独文件，默认目录为“D:/小说/...”；" />
+    <option name="LAST_COMMIT_MESSAGE" value="下载小说到本地目录中，分章节下载，下载完成后合并成单独文件，默认目录为“D:/小说/...”；" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <option name="time" value="12" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -500,111 +565,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/Enum/NovelSiteEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="924">
-          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="28" column="31" lean-forward="true" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/entitys/Chapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/Spider-Rule.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/Enum/NovelSiteEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="990">
-          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/conf/Spider-Rule.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/Enum/NovelSiteEnum.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="35" column="43" lean-forward="true" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/jsoup/jsoup/1.9.2/jsoup-1.9.2.jar!/org/jsoup/nodes/Element.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="141" lean-forward="true" selection-start-line="141" selection-end-line="141" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar!/org/apache/http/util/EntityUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2613">
-          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/Spider-Rule.fxml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/sdf.java" />
-    <entry file="file://$PROJECT_DIR$/config/Spider-Rule" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/scratch.xml" />
     <entry file="jar://$USER_HOME$/.m2/repository/commons-codec/commons-codec/1.9/commons-codec-1.9-sources.jar!/org/apache/commons/codec/binary/StringUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5465">
@@ -623,13 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
@@ -717,45 +670,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/entitys/Chapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.m2/repository/org/jsoup/jsoup/1.9.2/jsoup-1.9.2-sources.jar!/org/jsoup/nodes/Node.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="15" column="7" lean-forward="true" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="19" column="48" selection-start-line="19" selection-start-column="48" selection-end-line="19" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/BxwxChapterSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -766,20 +684,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/DefaultChapterSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="2" column="51" lean-forward="true" selection-start-line="2" selection-start-column="51" selection-end-line="2" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterDetailSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="9" column="26" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Desktop/CalAera.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -787,42 +691,202 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterSpider.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://D:/迅雷下载/5740.txt" />
-    <entry file="file://D:/迅雷下载/元尊.txt">
+    <entry file="file://D:/迅雷下载/元尊.txt" />
+    <entry file="file://$USER_HOME$/Downloads/圣墟.txt" />
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/src.zip!/javax/security/auth/login/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3565">
-          <caret line="65231" column="18" selection-start-line="65231" selection-start-column="9" selection-end-line="65231" selection-end-column="18" />
+        <state relative-caret-position="293">
+          <caret line="187" column="22" selection-start-line="187" selection-start-column="22" selection-end-line="187" selection-end-column="22" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/ChapterDetailSpiderFactor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="707" column="12" selection-start-line="707" selection-start-column="12" selection-end-line="707" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/src.zip!/java/util/concurrent/ExecutorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="136" column="17" selection-start-line="136" selection-start-column="17" selection-end-line="136" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/小说/23us.so/merge.txt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/entitys/ChapterDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1056">
-          <caret line="48" column="24" selection-start-line="48" selection-start-column="24" selection-end-line="48" selection-end-column="24" />
+        <state relative-caret-position="1791">
+          <caret line="98" column="25" selection-start-line="68" selection-end-line="98" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterDetailSpider.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/configuration/configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1176">
-          <caret line="48" column="40" lean-forward="true" selection-start-line="48" selection-start-column="40" selection-end-line="48" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="312">
+          <caret line="31" column="33" lean-forward="true" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/entitys/Chapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/ChapterSpiderFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-101">
+          <caret line="23" column="34" selection-start-line="23" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4-sources.jar!/org/apache/http/util/EntityUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/conf/Spider-Rule.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="43" column="41" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="41" />
+        <state relative-caret-position="96">
+          <caret line="4" column="16" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/src.zip!/java/util/Comparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="149" column="8" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/DefaultChapterSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/BxwxChapterSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/NovelDownload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1296">
+          <caret line="76" column="31" selection-start-line="76" selection-start-column="31" selection-end-line="76" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterDetailSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="36" selection-start-line="30" selection-start-column="12" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="66" column="60" selection-start-line="66" selection-start-column="60" selection-end-line="66" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/interfaces/INovelDownload.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="22" column="14" lean-forward="true" selection-start-line="22" selection-start-column="14" selection-end-line="22" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/interfaces/IChapterDetailSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/javacalas.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractChapterSpider.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/史上最强师兄.txt" />
+    <entry file="file://D:/小说/23us.so/mergenull.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="1" column="574" selection-start-line="1" selection-start-column="574" selection-end-line="1" selection-end-column="574" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/requests/FilterRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/requests/ClassRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/builders/AllDefaultPossibilitiesBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.m2/repository/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/builders/JUnit4Builder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="105" column="9" lean-forward="true" selection-start-line="105" selection-start-column="9" selection-end-line="105" selection-end-column="9" />
+          <folding>
+            <element signature="e#3123#3124#0" expanded="true" />
+            <element signature="e#3190#3191#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -883,6 +947,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

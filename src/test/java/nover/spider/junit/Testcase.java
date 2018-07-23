@@ -82,7 +82,7 @@ public class Testcase {
         config.setSize(100);
         config.setTryTimes(10);
 //        download.download("http://www.23us.so/files/article/html/1/1969/", config);
-        System.out.println("下载好了，文件保存在：" + download.download("http://www.23us.so/files/article/html/1/1969/", config) + "这里，赶紧去看看吧！");
+        System.out.println("下载好了，文件保存在：" + download.download("https://www.23us.so/files/article/html/16/16282/index.html", config) + "这里，赶紧去看看吧！");
     }
 
 
@@ -103,5 +103,16 @@ public class Testcase {
         NovelSpiderUtil.multiFileMerge("D:/小说", null, true);
     }
 
+    @Test
+    public void test(){
+        int  a, b = 2,c;
+        a=b;
+        c=b;
+        if (a == c){
+            System.out.println("等于");
+        }else{
+            System.out.println("不等于");
+        }
+    }
 
 }
