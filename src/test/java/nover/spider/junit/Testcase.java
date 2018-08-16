@@ -3,20 +3,16 @@ package nover.spider.junit;
 import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.configuration.configuration;
 import novel.spider.entitys.Chapter;
-import novel.spider.impl.BxwxChapterSpider;
-import novel.spider.impl.DefaultChapterDetailSpider;
-import novel.spider.impl.DefaultChapterSpider;
-import novel.spider.impl.NovelDownload;
+import novel.spider.impl.chapter.BxwxChapterSpider;
+import novel.spider.impl.chapter.DefaultChapterDetailSpider;
+import novel.spider.impl.chapter.DefaultChapterSpider;
+import novel.spider.impl.download.NovelDownload;
 import novel.spider.interfaces.IChapterDetailSpider;
 import novel.spider.interfaces.IChapterSpider;
 import novel.spider.interfaces.INovelDownload;
 import novel.spider.util.NovelSpiderUtil;
-import org.apache.http.client.config.RequestConfig;
 import org.junit.Test;
 
-import javax.security.auth.login.Configuration;
-import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,17 +86,17 @@ public class Testcase {
     public void testSubList() {
         List<Integer> ints = new ArrayList<>();
         for (int i = 0; i < 10 ;i++) {
-            ints.add(i);
+            ints.add(i * i );
         }
         System.out.println(ints);
         //[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         //0-4
-        System.out.println(ints.subList(0, 5));
+        System.out.println(ints.subList(0, ints.size()));
     }
 
     @Test
     public void testMultiFileMerge() {
-        NovelSpiderUtil.multiFileMerge("D:/小说", null, true);
+        NovelSpiderUtil.multiFileMerge("D:/小说", null, true ,"测试");
     }
 
     @Test

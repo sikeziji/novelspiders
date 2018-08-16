@@ -1,4 +1,4 @@
-package novel.spider.impl;
+package novel.spider.impl.chapter;
 
 /**
  * FileName: DefaultChapterDetailSpider

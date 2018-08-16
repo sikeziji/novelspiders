@@ -1,7 +1,8 @@
-package novel.spider.impl;
+package novel.spider.impl.chapter;
 
 import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.entitys.Chapter;
+import novel.spider.impl.AbstractSpider;
 import novel.spider.interfaces.IChapterSpider;
 import novel.spider.util.NovelSpiderUtil;
 import org.apache.http.client.methods.CloseableHttpResponse;

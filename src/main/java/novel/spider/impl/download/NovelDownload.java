@@ -1,4 +1,4 @@
-package novel.spider.impl;
+package novel.spider.impl.download;
 
 import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.configuration.configuration;
@@ -10,7 +10,6 @@ import novel.spider.interfaces.INovelDownload;
 import novel.spider.util.ChapterDetailSpiderFactor;
 import novel.spider.util.ChapterSpiderFactory;
 import novel.spider.util.NovelSpiderUtil;
-import sun.nio.cs.UTF_32LE;
 
 
 import java.io.File;
@@ -74,7 +73,7 @@ public class NovelDownload implements INovelDownload {
                 e.printStackTrace();
             }
         }
-        NovelSpiderUtil.multiFileMerge(savePath, null, true);
+        NovelSpiderUtil.multiFileMerge(savePath, null, true , chapters.get(0).getTitle());
         System.out.println(chapters.get(1).getTitle());
         return savePath + "/merge"+chapters.get(1).getTitle()+".txt";
     }

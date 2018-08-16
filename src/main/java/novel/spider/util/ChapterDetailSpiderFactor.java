@@ -1,7 +1,7 @@
 package novel.spider.util;
 
 import novel.spider.Enum.NovelSiteEnum;
-import novel.spider.impl.DefaultChapterDetailSpider;
+import novel.spider.impl.chapter.DefaultChapterDetailSpider;
 import novel.spider.interfaces.IChapterDetailSpider;
 
 /**

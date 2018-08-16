@@ -1,7 +1,8 @@
-package novel.spider.impl;
+package novel.spider.impl.chapter;
 
 import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.entitys.ChapterDetail;
+import novel.spider.impl.AbstractSpider;
 import novel.spider.interfaces.IChapterDetailSpider;
 import novel.spider.util.NovelSpiderUtil;
 import org.jsoup.Jsoup;

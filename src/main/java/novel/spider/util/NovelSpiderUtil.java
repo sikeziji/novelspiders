@@ -62,9 +62,9 @@ public class NovelSpiderUtil {
      * @param mergeToFile 被合并的文本文件，这个参数可以为null，合并后的文件保存在path/merge.txt
      * @param deleteThisFile 布尔值是否删除该文件
      */
-    public static  void multiFileMerge(String path , String mergeToFile,boolean deleteThisFile)
+    public static  void multiFileMerge(String path , String mergeToFile,boolean deleteThisFile ,String name )
     {
-    mergeToFile = mergeToFile == null ? path +"/merge"+ null +".txt":mergeToFile;
+    mergeToFile = mergeToFile == null ? path +"/merge" +name + ".txt":mergeToFile;
     //文件路径
     File[] files = new File(path).listFiles(new FilenameFilter(){
 
