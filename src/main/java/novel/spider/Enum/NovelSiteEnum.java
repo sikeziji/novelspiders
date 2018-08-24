@@ -9,7 +9,8 @@ public enum NovelSiteEnum {
     DingDianXiaoShuo(1, "23us.so"),
     BiQuGe(2, "biquge.tw"),
     DingDianXiaoShuoWang(3, "booktxt.net"),
-    BiXiaWenXue(4, "bxwx9.org");
+    BiXiaWenXue(4, "bxwx9.org"),
+    KanShuZhong(5,"kanshuzhong.com");
     private int id;
     private String url;
 
@@ -44,6 +45,8 @@ public enum NovelSiteEnum {
                 return DingDianXiaoShuoWang;
             case 4:
                 return BiXiaWenXue;
+            case 5:
+                return KanShuZhong;
             default:
                 throw new RuntimeException("id=" + id + "是不被支持的小说网站");
         }

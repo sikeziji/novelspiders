@@ -3,6 +3,7 @@ package nover.spider.junit;
 import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.configuration.configuration;
 import novel.spider.entitys.Chapter;
+import novel.spider.entitys.Novel;
 import novel.spider.impl.chapter.BxwxChapterSpider;
 import novel.spider.impl.chapter.DefaultChapterDetailSpider;
 import novel.spider.impl.chapter.DefaultChapterSpider;
@@ -10,6 +11,8 @@ import novel.spider.impl.download.NovelDownload;
 import novel.spider.interfaces.IChapterDetailSpider;
 import novel.spider.interfaces.IChapterSpider;
 import novel.spider.interfaces.INovelDownload;
+import novel.spider.interfaces.INovelSpider;
+import novel.spider.util.NovelSpiderFactory;
 import novel.spider.util.NovelSpiderUtil;
 import org.junit.Test;
 
@@ -109,6 +112,20 @@ public class Testcase {
         }else{
             System.out.println("不等于");
         }
+    }
+
+    @Test
+    public void testBxwxGetsNovel() {
+        INovelSpider spider = NovelSpiderFactory.getNovelSpider("http://www.bxwx9.org/binitialE/0/1.htm");
+        List<Novel> novels = spider.getsNovel("http://www.bxwx9.org/binitialE/0/1.htm");
+        for (Novel novel : novels) {
+            System.out.println(novel);
+        }
+    }
+
+    @Test
+    public void test36Ker(){
+
     }
 
 }

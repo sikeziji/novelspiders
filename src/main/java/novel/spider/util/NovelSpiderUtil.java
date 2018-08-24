@@ -7,6 +7,8 @@ import org.dom4j.Element;
 import org.dom4j.io.SAXReader;
 
 import java.io.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 /**
@@ -112,5 +114,45 @@ public class NovelSpiderUtil {
             out.close();
         }
 
+    }
+
+    /**
+     * 获取书记状态
+     */
+    public static int getNovelStatus(String status){
+        if (status.contains("连载")) {
+            return  1;
+        }else if (status.contains("完结") || status.contains("完成")){
+            return 2;
+        }else {
+            throw  new RuntimeException("不支持书籍状态:"+status);
+        }
+    }
+
+    /**
+     * 格式化日期字符串为日期对象
+     * @param dateStr
+     * @param pattern
+     * @return
+     * @throws ParseException
+     */
+    public static Date getDate(String dateStr, String pattern) throws ParseException {
+        if ("MM-dd".equals(pattern)) {
+            pattern = "yyyy-MM-dd";
+            dateStr = getDateField(Calendar.YEAR) + "-" + dateStr;
+        }
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+        Date date = sdf.parse(dateStr);
+        return date;
+    }
+
+    /**
+     * 获取本时刻的字符量
+     * @param field
+     * @return
+     */
+    public static String getDateField(int field) {
+        Calendar cal = new GregorianCalendar();
+        return cal.get(field) + "";
     }
 }
