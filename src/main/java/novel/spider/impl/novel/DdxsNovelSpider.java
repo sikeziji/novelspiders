@@ -35,10 +35,10 @@ public class DdxsNovelSpider extends AbstractNovelSpider {
                 Elements tds =  tr.getElementsByTag("td");//获取tr下所有td的集合
                 Novel novel = new Novel();
                 novel.setName(tds.first().text());
-                String novelUrl = tds.first().getElementsByTag("a").first().absUrl("href");
+                String novelUrl = tds.get(1).getElementsByTag("a").first().absUrl("href");
                 novel.setUrl(novelUrl);
                 novel.setLastUpdateChapter(tds.get(1).text());
-                novel.setLastUpdateChapterUrl(tds.get(1).getElementsByTag("a").first().absUrl("href"));
+                novel.setLastUpdateChapterUrl(novelUrl);
                 novel.setAuthor(tds.get(2).text());
                 novel.setLastUpadteTime(NovelSpiderUtil.getDate(tds.get(4).text(),"yy-MM-dd"));
                 novel.setStatus(NovelSpiderUtil.getNovelStatus(tds.get(5).text()));
