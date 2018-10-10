@@ -9,6 +9,7 @@
 		<chapter-detail-content-selector>#contents</chapter-detail-content-selector>
 		<chapter-detail-prev-selector>#footlink a </chapter-detail-prev-selector>
 		<chapter-detail-next-selector>#footlink a,2</chapter-detail-next-selector>
+		<novel-selector>dd table tbody tr</novel-selector>
 	</site>
 	<site>
 		<title>笔趣阁</title>

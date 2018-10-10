@@ -12,7 +12,7 @@ import java.util.Date;
  * Date:     2018/8/16 16:25
  */
 public class Novel implements Serializable {
-    private static final long seriaVersionUID = 4834523404092493662L;
+    private static final long seriaVersionUID = 4834523404092893662L;
     /**
      * 书名
      */

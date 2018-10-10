@@ -103,21 +103,17 @@ public class Testcase {
     }
 
     @Test
-    public void test(){
-        int  a, b = 2,c;
-        a=b;
-        c=b;
-        if (a == c){
-            System.out.println("等于");
-        }else{
-            System.out.println("不等于");
+    public void testBxwxGetsNovels() {
+        INovelSpider spider = NovelSpiderFactory.getNovelSpider("http://www.bxwx9.org");
+        List<Novel> novels = spider.getsNovel("https://www.bxwx9.org/modules/article/index.php");
+        for (Novel novel : novels) {
+            System.out.println(novel);
         }
     }
-
     @Test
-    public void testBxwxGetsNovel() {
-        INovelSpider spider = NovelSpiderFactory.getNovelSpider("http://www.bxwx9.org/binitialE/0/1.htm");
-        List<Novel> novels = spider.getsNovel("http://www.bxwx9.org/binitialE/0/1.htm");
+    public void testDdxsGetsNovels() {
+        INovelSpider spider = NovelSpiderFactory.getNovelSpider("https://www.23us.so/top/allvote_1.html");
+        List<Novel> novels = spider.getsNovel("https://www.23us.so/top/allvote_1.html");
         for (Novel novel : novels) {
             System.out.println(novel);
         }
