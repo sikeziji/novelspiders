@@ -3,10 +3,12 @@ package nover.spider.junit;
 import novel.spider.Enum.NovelSiteEnum;
 import novel.spider.configuration.configuration;
 import novel.spider.entitys.Chapter;
+import novel.spider.entitys.ChapterDetail;
 import novel.spider.entitys.Novel;
 import novel.spider.impl.chapter.BxwxChapterSpider;
 import novel.spider.impl.chapter.DefaultChapterDetailSpider;
 import novel.spider.impl.chapter.DefaultChapterSpider;
+import novel.spider.impl.download.DownloadCallable;
 import novel.spider.impl.download.NovelDownload;
 import novel.spider.interfaces.IChapterDetailSpider;
 import novel.spider.interfaces.IChapterSpider;
@@ -16,6 +18,7 @@ import novel.spider.util.NovelSpiderFactory;
 import novel.spider.util.NovelSpiderUtil;
 import org.junit.Test;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,8 +51,8 @@ public class Testcase {
      */
     @Test
     public void testGetsChapter3() {
-        IChapterSpider spider = new BxwxChapterSpider();
-        List<Chapter> chapters = spider.getsChapter("https://www.bxwx9.org/b/5/5740/");
+        IChapterSpider spider = new DefaultChapterSpider();
+        List<Chapter> chapters = spider.getsChapter("https://www.booktxt.net/2_2096/");
         for (Chapter chapter : chapters) {
             System.out.println(chapter);
         }
@@ -68,20 +71,28 @@ public class Testcase {
      * 爬取笔下文学的元尊章节内容
      */
     @Test
-    public void testGetChapterDetail2() {
+    public void testGetChapterDetail2() throws Exception {
         IChapterDetailSpider spider = new DefaultChapterDetailSpider();
-        System.out.println(spider.getChapterDetail("https://www.bxwx9.org/b/5/5740/41249369.html").getContent());
+        String url = "http://www.booktxt.net/2_2096/2197962.html";
+        ChapterDetail chapterDetail = spider.getChapterDetail(url);
+        INovelDownload download = new NovelDownload();
+        configuration config = new configuration();
+        config.setPath("/Users/wangjun/Downloads/小说");
+        config.setSize(100);
+        config.setTryTimes(10);
+        new DownloadCallable(config.getPath() + "/" + NovelSiteEnum.getEnumByUrl(url).getUrl() + "/"  + "test.txt",chapterDetail,config.getTryTimes()).callForContext();
     }
 
     @Test
     public void testDownload() {
         INovelDownload download = new NovelDownload();
         configuration config = new configuration();
-        config.setPath("D:/小说");
+        config.setPath("/Users/wangjun/Downloads/小说");
         config.setSize(100);
         config.setTryTimes(10);
 //        download.download("http://www.23us.so/files/article/html/1/1969/", config);
-        System.out.println("下载好了，文件保存在：" + download.download("https://www.23us.so/files/article/html/16/16282/index.html", config) + "这里，赶紧去看看吧！");
+        //url='https://www.booktxt.net/2_2096/2197963.html'
+        System.out.println("下载好了，文件保存在：" + download.download("https://www.booktxt.net/2_2096/", config) + "这里，赶紧去看看吧！");
     }
 
 

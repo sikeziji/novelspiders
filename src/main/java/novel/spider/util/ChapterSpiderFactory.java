@@ -27,13 +27,13 @@ public class ChapterSpiderFactory {
                 chapterSpider = new BxwxChapterSpider();
                 break;
             case DingDianXiaoShuo:
-                chapterSpider = new DefaultChapterSpider();
+                chapterSpider = new BxwxChapterSpider();
                 break;
             case DingDianXiaoShuoWang:
-                chapterSpider = new DefaultChapterSpider();
+                chapterSpider = new BxwxChapterSpider();
                 break;
             case BiQuGe:
-                chapterSpider = new DefaultChapterSpider();
+                chapterSpider = new BxwxChapterSpider();
                 break;
         }
         return chapterSpider;

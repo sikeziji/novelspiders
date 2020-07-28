@@ -14,7 +14,7 @@
 	<site>
 		<title>笔趣阁</title>
 		<charset>UTF-8</charset>
-		<url>http://www.biquge.tw</url>
+		<url>https://www.266ks.com/</url>
 		<chapter-list-selector>#list dd a</chapter-list-selector>
 		<chapter-detail-title-selector>#bookname h1,0</chapter-detail-title-selector>
 		<chapter-detail-content-selector>#content</chapter-detail-content-selector>
@@ -26,6 +26,14 @@
 		<charset>GBK</charset>
 		<url>https://www.booktxt.net/</url>
 		<chapter-list-selector>#list dd a</chapter-list-selector>
+<!--		标题-->
+		<chapter-detail-title-selector>.box_con .bookname h1,0</chapter-detail-title-selector>
+<!--		内容-->
+		<chapter-detail-content-selector>#content</chapter-detail-content-selector>
+<!--		上一章-->
+		<chapter-detail-prev-selector>.bottem2 a,0</chapter-detail-prev-selector>
+<!--		下一章-->
+		<chapter-detail-next-selector>.bottem2 a,2</chapter-detail-next-selector>
 	</site>
 	<site>
 		<title>看书中</title>
@@ -42,7 +50,7 @@
 	<site>
 		<title>笔下文学</title>
 		<charset>UTF-8</charset>
-		<url>http://www.bxwx9.org</url>
+		<url>http://www.bxwx.tw</url>
 		<chapter-list-selector>#TabCss dd a</chapter-list-selector>
 		<chapter-detail-title-selector>#title</chapter-detail-title-selector>
 		<chapter-detail-content-selector>#content</chapter-detail-content-selector>

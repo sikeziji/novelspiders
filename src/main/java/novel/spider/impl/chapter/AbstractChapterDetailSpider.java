@@ -7,6 +7,7 @@ import novel.spider.interfaces.IChapterDetailSpider;
 import novel.spider.util.NovelSpiderUtil;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
 
 import java.util.Map;
 
@@ -23,7 +24,8 @@ public class AbstractChapterDetailSpider extends AbstractSpider implements IChap
     public ChapterDetail getChapterDetail(String url) {
         try {
             String result = super.crawl(url);
-            result = result.replace("&nbsp;", "  ").replace("<br />", "\n").replace("<br/>", "\n");
+//            result = result.replace("&nbsp;", "  ").replace("<br />", "\n\t").replace("<br/>", "\n\t");
+//            result = result.replace("&nbsp;", "  ").replace("<br />", "\r\n");
             Document document = Jsoup.parse(result);
             document.setBaseUri(url);
             Map<String, String> contexts = NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url));
@@ -38,7 +40,11 @@ public class AbstractChapterDetailSpider extends AbstractSpider implements IChap
 
             //获取章节内容
             String contentSelector = contexts.get("chapter-detail-content-selector");
-            detail.setContent(document.select(contentSelector).first().text());
+            Element first = document.select(contentSelector).first();
+            String textContent1 = first.text();
+//                    .replaceAll("\\s[1,5]*","\n\t");
+//                    .replaceAll("<br />","\n\t");
+            detail.setContent(textContent1);
 
             //获取前一章地址
             String prevSelector = contexts.get("chapter-detail-prev-selector");
@@ -54,6 +60,7 @@ public class AbstractChapterDetailSpider extends AbstractSpider implements IChap
             return detail;
 
         } catch (Exception e) {
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
 

@@ -7,9 +7,9 @@ package novel.spider.Enum;
  */
 public enum NovelSiteEnum {
     DingDianXiaoShuo(1, "23us.so"),
-    BiQuGe(2, "biquge.tw"),
+    BiQuGe(2, "266ks.com"),
     DingDianXiaoShuoWang(3, "booktxt.net"),
-    BiXiaWenXue(4, "bxwx9.org"),
+    BiXiaWenXue(4, "bxwx.tw"),
     KanShuZhong(5,"kanshuzhong.com");
     private int id;
     private String url;

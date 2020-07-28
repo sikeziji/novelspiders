@@ -19,11 +19,11 @@ import java.util.*;
 import java.util.concurrent.*;
 
 /**
- *  如何实现多线程下载任意网站的小说
- * 	1.拿到该网站的某本小说的所有章节：章节列表
- * 	2.通过计算，将这些章节分配给指定数量的线程，让他们去解析，然后保存到文本 *  文件中
- * 	3.通知主线程，将这些零散的小文件合并成一个大文件。最后将那些分片的小文件 *  删除掉。
- *
+ * 如何实现多线程下载任意网站的小说
+ * 1.拿到该网站的某本小说的所有章节：章节列表
+ * 2.通过计算，将这些章节分配给指定数量的线程，让他们去解析，然后保存到文本 *  文件中
+ * 3.通知主线程，将这些零散的小文件合并成一个大文件。最后将那些分片的小文件 *  删除掉。
+ * <p>
  * FileName: NovelDownload
  * Author:   Wangj
  * Date:     2018/6/29 14:13
@@ -56,7 +56,7 @@ public class NovelDownload implements INovelDownload {
         List<Future<String>> tasks = new ArrayList<>();
 
         //通过这两段代码就可以创建缺失的路径
-        String savePath = configuration.getPath() + "/" + NovelSiteEnum.getEnumByUrl(url).getUrl()+"/";
+        String savePath = configuration.getPath() + "/" + NovelSiteEnum.getEnumByUrl(url).getUrl() + "/";
         new File(savePath).mkdirs();
 
         for (String key : keySet) {
@@ -73,50 +73,9 @@ public class NovelDownload implements INovelDownload {
                 e.printStackTrace();
             }
         }
-        NovelSpiderUtil.multiFileMerge(savePath, null, true , chapters.get(0).getTitle());
+        NovelSpiderUtil.multiFileMerge(savePath, null, true, chapters.get(0).getTitle());
         System.out.println(chapters.get(1).getTitle());
-        return savePath + "/merge"+chapters.get(1).getTitle()+".txt";
+        return savePath + "/merge" + chapters.get(1).getTitle() + ".txt";
     }
 }
 
-class DownloadCallable implements Callable<String> {
-    private List<Chapter> chapters;
-    private String path;
-    private int trytimes;
-
-
-    public DownloadCallable(String path, List<Chapter> chapters ,int trytimes) {
-        this.path = path;
-        this.chapters = chapters;
-        this.trytimes = trytimes;
-    }
-
-
-    @Override
-    public String call() throws Exception {
-        try (
-                PrintWriter out = new PrintWriter(new File(path),"UTF-8");
-        ) {
-            for (Chapter chapter : chapters) {
-                IChapterDetailSpider spider = ChapterDetailSpiderFactor.getChapterDetailSpider(chapter.getUrl());
-                ChapterDetail detail = null;
-                for (int i = 0; i < trytimes; i++) {
-                    try {
-                        detail = spider.getChapterDetail(chapter.getUrl());
-                        out.println(detail.getTitle());
-                        out.println(detail.getContent());
-                        break;
-                    }catch (RuntimeException e){
-                        System.out.println("尝试第 " +(i+1) +"/"+trytimes +"次下载失败");
-                    }
-
-                }
-
-            }
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        return path;
-    }
-}
