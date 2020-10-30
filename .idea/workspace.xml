@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="c4e45637-a09a-4e9a-9feb-809fb632f716" name="Default" comment="添加小说网站全部小说列表下载和获取">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/Spider-Rule.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/Spider-Rule.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/Enum/NovelSiteEnum.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/Enum/NovelSiteEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/impl/AbstractSpider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/configuration/configuration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/configuration/configuration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/impl/chapter/AbstractChapterDetailSpider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/impl/chapter/AbstractChapterDetailSpider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/impl/download/NovelDownload.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/impl/download/NovelDownload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/util/ChapterSpiderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/util/ChapterSpiderFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/novel/spider/util/NovelSpiderFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/nover/spider/junit/Testcase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,9 +33,6 @@
     <expand />
     <select />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="novel.spider" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -48,10 +48,12 @@
       <GitPushTagMode />
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="width" value="1936" />
-    <option name="height" value="1040" />
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1f4mCv8gTwjAA1MchxoNT1ACqia" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -59,13 +61,13 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1539163127542" />
@@ -85,15 +87,50 @@
       <recent name="novel.spider.util" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.Testcase.testGetChapterDetail2">
+  <component name="RunManager" selected="JUnit.Testcase.testDownload">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Testcase.testBxwxGetsNovels" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel.spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nover.spider.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nover.spider.junit" />
+      <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
+      <option name="METHOD_NAME" value="testBxwxGetsNovels" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Testcase.testDdxsGetsNovels" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel.spider" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="nover.spider.junit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="nover.spider.junit" />
+      <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
+      <option name="METHOD_NAME" value="testDdxsGetsNovels" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Testcase.testDownload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="novelspiders" />
+      <module name="novel.spider" />
+      <useClassPathOnly />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="nover.spider.junit.*" />
@@ -104,13 +141,14 @@
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
       <option name="METHOD_NAME" value="testDownload" />
       <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testcase.testGetChapterDetail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="novelspiders" />
+    <configuration name="Testcase.testGetChapterDetail1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel.spider" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="nover.spider.junit.*" />
@@ -119,15 +157,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="nover.spider.junit" />
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetChapterDetail" />
+      <option name="METHOD_NAME" value="testGetChapterDetail1" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Testcase.testGetChapterDetail2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="novelspiders" />
+    <configuration name="Testcase.testGetsChapterSWMD" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="novel.spider" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="nover.spider.junit.*" />
@@ -136,41 +174,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="nover.spider.junit" />
       <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetChapterDetail2" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Testcase.testGetSiteContext" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="novelspiders" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nover.spider.junit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nover.spider.junit" />
-      <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetSiteContext" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Testcase.testGetsChapter3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="novelspiders" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="nover.spider.junit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="nover.spider.junit" />
-      <option name="MAIN_CLASS_NAME" value="nover.spider.junit.Testcase" />
-      <option name="METHOD_NAME" value="testGetsChapter3" />
+      <option name="METHOD_NAME" value="testGetsChapterSWMD" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -194,22 +198,23 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.Testcase.testGetsChapter3" />
       <item itemvalue="JUnit.Testcase.testDownload" />
-      <item itemvalue="JUnit.Testcase.testGetChapterDetail" />
-      <item itemvalue="JUnit.Testcase.testGetChapterDetail2" />
-      <item itemvalue="JUnit.Testcase.testGetSiteContext" />
+      <item itemvalue="JUnit.Testcase.testGetsChapterSWMD" />
+      <item itemvalue="JUnit.Testcase.testGetChapterDetail1" />
+      <item itemvalue="JUnit.Testcase.testBxwxGetsNovels" />
+      <item itemvalue="JUnit.Testcase.testDdxsGetsNovels" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Testcase.testGetChapterDetail2" />
         <item itemvalue="JUnit.Testcase.testDownload" />
-        <item itemvalue="JUnit.Testcase.testGetsChapter3" />
-        <item itemvalue="JUnit.Testcase.testGetSiteContext" />
-        <item itemvalue="JUnit.Testcase.testGetChapterDetail" />
+        <item itemvalue="JUnit.Testcase.testGetChapterDetail1" />
+        <item itemvalue="JUnit.Testcase.testDdxsGetsNovels" />
+        <item itemvalue="JUnit.Testcase.testBxwxGetsNovels" />
+        <item itemvalue="JUnit.Testcase.testGetsChapterSWMD" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -353,24 +358,32 @@
     <option name="LAST_COMMIT_MESSAGE" value="添加顶点小说网站全部小说列表下载和获取" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1878" height="460" key="GridCell.Tab.0.bottom" timestamp="1595917409246">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state x="765" y="208" key="#com.intellij.ide.util.MemberChooser" timestamp="1604036979888">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state x="765" y="208" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1604036979888" />
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom" timestamp="1604039297687">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1604039297687" />
     <state width="1878" height="460" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1595917409246" />
     <state width="1878" height="460" key="GridCell.Tab.0.bottom/0.23.1920.1113@0.23.1920.1113" timestamp="1595500433818" />
-    <state width="1878" height="460" key="GridCell.Tab.0.center" timestamp="1595917409245">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state width="1877" height="261" key="GridCell.Tab.0.center" timestamp="1604039297687">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1604039297687" />
     <state width="1878" height="460" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1595917409245" />
     <state width="1878" height="460" key="GridCell.Tab.0.center/0.23.1920.1113@0.23.1920.1113" timestamp="1595500433817" />
-    <state width="1878" height="460" key="GridCell.Tab.0.left" timestamp="1595917409244">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state width="1877" height="261" key="GridCell.Tab.0.left" timestamp="1604039297686">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1604039297686" />
     <state width="1878" height="460" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1595917409244" />
     <state width="1878" height="460" key="GridCell.Tab.0.left/0.23.1920.1113@0.23.1920.1113" timestamp="1595500433816" />
-    <state width="1878" height="460" key="GridCell.Tab.0.right" timestamp="1595917409246">
-      <screen x="0" y="0" width="1920" height="1200" />
+    <state width="1877" height="261" key="GridCell.Tab.0.right" timestamp="1604039297687">
+      <screen x="0" y="0" width="1920" height="1050" />
     </state>
+    <state width="1877" height="261" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1604039297687" />
     <state width="1878" height="460" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595917409246" />
     <state width="1878" height="460" key="GridCell.Tab.0.right/0.23.1920.1113@0.23.1920.1113" timestamp="1595500433817" />
     <state width="1878" height="422" key="GridCell.Tab.1.bottom" timestamp="1595503636537">
@@ -389,6 +402,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state width="1878" height="422" key="GridCell.Tab.1.right/0.0.1920.1200@0.0.1920.1200" timestamp="1595503636537" />
+    <state x="440" y="99" key="SettingsEditor" timestamp="1604038936427">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="440" y="99" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1604038936427" />
     <state x="637" y="432" key="com.intellij.ide.util.TipDialog" timestamp="1595916401616">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
@@ -397,97 +414,13 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="618" y="235" width="683" height="729" key="find.popup/0.0.1920.1200@0.0.1920.1200" timestamp="1595499148086" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1604036762906">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1604036762906" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>novel.spider</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>Maven: commons-codec:commons-codec:1.9</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
   </component>
 </project>

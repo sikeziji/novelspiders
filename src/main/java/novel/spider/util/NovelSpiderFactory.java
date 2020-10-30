@@ -18,7 +18,7 @@ public final class NovelSpiderFactory {
         switch (novelSiteEnum){
             case BiXiaWenXue:return  new BxwxNovelSpider();
             case DingDianXiaoShuo: return new DdxsNovelSpider();
-            default : throw new RuntimeException(url + "暂时不支持");
+            default : return new DdxsNovelSpider();
         }
         }
     }

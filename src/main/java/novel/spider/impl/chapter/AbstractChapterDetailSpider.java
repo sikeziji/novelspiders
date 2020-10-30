@@ -9,6 +9,8 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Map;
 
 /**
@@ -26,7 +28,13 @@ public class AbstractChapterDetailSpider extends AbstractSpider implements IChap
             String result = super.crawl(url);
 //            result = result.replace("&nbsp;", "  ").replace("<br />", "\n\t").replace("<br/>", "\n\t");
 //            result = result.replace("&nbsp;", "  ").replace("<br />", "\r\n");
-            Document document = Jsoup.parse(result);
+//            System.out.println("1" + result);
+
+            String result1 = result.replaceAll("<br />", "/n");
+
+//            System.out.println("2" + result1);
+
+            Document document = Jsoup.parse(result1);
             document.setBaseUri(url);
             Map<String, String> contexts = NovelSpiderUtil.getContext(NovelSiteEnum.getEnumByUrl(url));
 
@@ -41,10 +49,18 @@ public class AbstractChapterDetailSpider extends AbstractSpider implements IChap
             //获取章节内容
             String contentSelector = contexts.get("chapter-detail-content-selector");
             Element first = document.select(contentSelector).first();
-            String textContent1 = first.text();
+            String textContent1 = first.text()
+                    .replace("/p","")
+                    .replace("/n", "\n")
 //                    .replaceAll("\\s[1,5]*","\n\t");
-//                    .replaceAll("<br />","\n\t");
+                    ;
+//            System.out.println("txt = " + textContent1);
+
             detail.setContent(textContent1);
+
+//            PrintWriter out = new PrintWriter(new File("E:/Downloads/小说1/" + detail.getTitle() + ".txt"), "UTF-8");
+//            out.println(textContent1);
+//            out.close();
 
             //获取前一章地址
             String prevSelector = contexts.get("chapter-detail-prev-selector");

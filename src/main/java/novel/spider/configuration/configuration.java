@@ -28,6 +28,17 @@ public class configuration implements Serializable {
      * 由于网络或服务器原因下载出错，可重新尝试连接的次数
      */
     private int tryTimes;
+
+    private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
     public configuration(){
         this.size = DEFAULT_SIZE;
     }

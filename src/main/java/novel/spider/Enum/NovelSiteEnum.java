@@ -6,7 +6,7 @@ package novel.spider.Enum;
  * Date:     2018/6/21 10:13
  */
 public enum NovelSiteEnum {
-    DingDianXiaoShuo(1, "23us.so"),
+    DingDianXiaoShuo(1, "ddxsku.com"),
     BiQuGe(2, "266ks.com"),
     DingDianXiaoShuoWang(3, "booktxt.net"),
     BiXiaWenXue(4, "bxwx.tw"),

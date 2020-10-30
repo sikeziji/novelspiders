@@ -3,7 +3,7 @@
 	<site>
 		<title>顶点小说</title>
 		<charset>UTF-8</charset>
-		<url>http://www.23us.so/</url>
+		<url>http://www.ddxsku.com/</url>
 		<chapter-list-selector>#at td a</chapter-list-selector>
 		<chapter-detail-title-selector>#amain h1</chapter-detail-title-selector>
 		<chapter-detail-content-selector>#contents</chapter-detail-content-selector>

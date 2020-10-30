@@ -73,8 +73,8 @@ public class NovelDownload implements INovelDownload {
                 e.printStackTrace();
             }
         }
-        NovelSpiderUtil.multiFileMerge(savePath, null, true, chapters.get(0).getTitle());
-        System.out.println(chapters.get(1).getTitle());
+        NovelSpiderUtil.multiFileMerge(savePath, null, true, configuration.getTitle());
+        System.out.println(configuration.getTitle());
         return savePath + "/merge" + chapters.get(1).getTitle() + ".txt";
     }
 }
